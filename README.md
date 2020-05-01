@@ -11,13 +11,23 @@ npm start
 ```
 The app can be accessed in your browser from http://localhost:3000.
 
-### Run node server
+### Run web services
+
+#### User service
 Open a new terminal and run
 ```
-cd backend
+cd webservices/user
 node index.js
 ```
-The node server runs from http://localhost:5000.
+The User service runs from http://localhost:2000.
+
+#### URL shortener
+Open a new terminal and run
+```
+cd webservices/url-shortener
+node index.js
+```
+The URL shortener runs from http://localhost:4000.
 
 
 ## How to use
