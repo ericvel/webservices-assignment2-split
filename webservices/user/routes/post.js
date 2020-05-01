@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-global.ver = require('../../../config');
+global.ver = require('../config');
 const jwt = require('jsonwebtoken');
 
 // Array to store users

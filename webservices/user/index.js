@@ -1,13 +1,10 @@
 const express = require('express');
-const connectDB = require('./config/db');
 
 const app = express();
 
-// Connect to database
-connectDB();
-
 app.use(express.json());
 
+// Cors
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "*");
@@ -16,8 +13,8 @@ app.use(function(req, res, next) {
 });
 
 // Define Services as routes
-app.use('/url', require('./services/url/index'))
-app.use('/user', require('./services/user/index'))
-const PORT = 5000;
+app.use('/user', require('./routes/post'));
+app.use('/user', require('./routes/get'));
+const PORT = 2000;
 
-app.listen(PORT, () => console.log('Server running on port ' + PORT));
+app.listen(PORT, () => console.log('User service running on port ' + PORT));

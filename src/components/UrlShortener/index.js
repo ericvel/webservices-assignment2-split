@@ -40,7 +40,7 @@ function UrlShortener(props) {
         switch(selectedMethod) {
             case 'GET':
                 if (input !== '') {
-                    fetch(`http://localhost:5000/url/${input}`, {
+                    fetch(`http://localhost:4000/${input}`, {
                         method: 'GET'
                     })
                     .then(function (response) {
@@ -62,7 +62,7 @@ function UrlShortener(props) {
                     );
                 } else {
                     // Gets all shortened URL ids
-                    fetch('http://localhost:5000/url/', {
+                    fetch('http://localhost:4000', {
                         method: 'GET',
                         headers: {
                             'Content-Type':'application/json; charset=utf-8',
@@ -91,7 +91,7 @@ function UrlShortener(props) {
                 }
                 break;
             case 'POST':
-                fetch('http://localhost:5000/url', {
+                fetch('http://localhost:4000', {
                     method: 'POST',
                     headers: {
                         'Content-Type':'application/json; charset=utf-8',
@@ -122,7 +122,7 @@ function UrlShortener(props) {
                 break;
             case 'PUT':
                 let updatedUrl = document.getElementById('updateInput').value;
-                fetch(`http://localhost:5000/url/${input}`, {
+                fetch(`http://localhost:4000/${input}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type':'application/json; charset=utf-8',
@@ -153,7 +153,7 @@ function UrlShortener(props) {
                 break;
             case 'DELETE':
                 if (input !== '') {
-                    fetch(`http://localhost:5000/url/${input}`, {
+                    fetch(`http://localhost:4000/${input}`, {
                         method: 'DELETE',
                         headers: {
                             'Content-Type':'application/json; charset=utf-8',
@@ -180,7 +180,7 @@ function UrlShortener(props) {
                     );
                 } else {
                     // Delete all URLs
-                    fetch(`http://localhost:5000/url`, {
+                    fetch(`http://localhost:4000`, {
                         method: 'DELETE',
                         headers: {
                             'Content-Type':'application/json; charset=utf-8',

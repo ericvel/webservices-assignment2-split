@@ -3,10 +3,10 @@ const router = express.Router();
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 const config = require('config');
-global.ver = require('../../../config');
-const verification = require('../../../jwt_ver');
+global.ver = require('../config');
+const verification = require('../jwt_ver');
 
-const Url = require('../../../models/Url');
+const Url = require('../models/Url');
 
 // Short Url Creation
 router.post('/', async (req, res) => 

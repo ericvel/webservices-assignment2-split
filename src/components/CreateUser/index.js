@@ -12,7 +12,7 @@ function CreateUser() {
         }
 
         let responseCode;
-        fetch('http://localhost:5000/user', {
+        fetch('http://localhost:2000/user', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json; charset=utf-8'

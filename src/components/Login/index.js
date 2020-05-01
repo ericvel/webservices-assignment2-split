@@ -7,7 +7,7 @@ function Login(props) {
     let username = document.getElementById('loginUsername').value;        
     let password = document.getElementById('loginPassword').value;
     let responseCode;
-    fetch('http://localhost:5000/user/login', {
+    fetch('http://localhost:2000/user/login', {
       method: 'POST',
       headers: {
         'Content-Type':'application/json; charset=utf-8'

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Url = require('../../../models/Url');
-global.ver = require('../../../config');
-const verification = require('../../../jwt_ver');
+const Url = require('../models/Url');
+global.ver = require('../config');
+const verification = require('../jwt_ver');
 
 //Request Sepcific Original Url
 router.get('/:id', async (req, res) =>
@@ -30,7 +30,6 @@ router.get('/:id', async (req, res) =>
 router.get('/', async (req, res) =>
 {  
   const header_value = req.header('X-Access-Token');
-  
   if (verification.Verification(header_value)) {
     try
     {
