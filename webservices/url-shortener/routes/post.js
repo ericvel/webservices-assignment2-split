@@ -3,7 +3,6 @@ const router = express.Router();
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 const config = require('config');
-global.ver = require('../config');
 const verification = require('../jwt_ver');
 
 const Url = require('../models/Url');
