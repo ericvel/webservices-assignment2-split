@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const verification = require('../jwt_ver');
 
-const Url = require('../models/Url');
+const Url = require('../models/url');
 
 // Original url update
 router.put('/:id', async (req, res) =>

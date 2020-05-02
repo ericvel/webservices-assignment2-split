@@ -5,7 +5,7 @@ const shortid = require('shortid');
 const config = require('config');
 const verification = require('../jwt_ver');
 
-const Url = require('../models/Url');
+const Url = require('../models/url');
 
 // Short Url Creation
 router.post('/', async (req, res) => 
