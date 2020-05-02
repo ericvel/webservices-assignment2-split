@@ -11,7 +11,7 @@ router.get('/token', async (req, res) =>
       {
         // Adds token as header
         res.setHeader('X-Access-Token', ver.token);
-        return res.status(200).send();
+        return res.status(200).send('Token found');
       }
       else 
       {

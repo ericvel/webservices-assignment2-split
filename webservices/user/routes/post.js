@@ -13,7 +13,6 @@ router.post('/', (req, res) =>
 
     users.push(user);
     res.status(200).send(user.username);
-    console.log(user);
     console.log("User created: " + user.username);
 });//POST request Create User
 

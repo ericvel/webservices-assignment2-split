@@ -11,6 +11,7 @@ router.get('/:id', async (req, res) =>
     const url = await Url.findOne({ urlCode: req.params.id });
     if (url) 
     {
+      console.log('Long URL: ' + url.longUrl);
       return res.status(301).json(url.longUrl);
     }//if
     else 

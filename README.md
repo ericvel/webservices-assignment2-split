@@ -1,34 +1,33 @@
 # Assignment 2 - Group 22
 
 ## Setup
-### Install dependencies
-```
-npm i
-```
-### Run React app
-```
-npm start
-```
-The app can be accessed in your browser from http://localhost:3000.
 
-### Run web services
-
-#### User service
+### Run User service
 Open a new terminal and run
 ```
 cd webservices/user
+npm i
 node index.js
 ```
 The User service runs from http://localhost:2000.
 
-#### URL shortener
+### Run URL shortener
 Open a new terminal and run
 ```
 cd webservices/url-shortener
+npm i
 node index.js
 ```
 The URL shortener runs from http://localhost:4000.
 
+
+### Run React app
+```
+cd frontend
+npm i
+npm start
+```
+The React app can be accessed in your browser from http://localhost:3000.
 
 ## How to use
 
