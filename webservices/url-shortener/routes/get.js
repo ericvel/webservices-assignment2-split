@@ -30,7 +30,9 @@ router.get('/:id', async (req, res) =>
 router.get('/', async (req, res) =>
 {  
   const header_value = req.header('X-Access-Token');
-  if (verification.Verification(header_value)) {
+  const isHeaderValid = await verification.Verification(header_value);
+  console.log("Is header valid: " + isHeaderValid);
+  if (isHeaderValid == true) {
     try
     {
       const url = await Url.find();
