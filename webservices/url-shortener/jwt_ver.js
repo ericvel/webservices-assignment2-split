@@ -7,7 +7,6 @@ module.exports =
     Verification: function (header_value)
     {
         return new Promise ((resolve, reject) => {
-            
             http.get('http://localhost:2000/user/token', async (res) => {
                 if (res.statusCode == 200) {
                     // Get JWT from response header
@@ -24,13 +23,13 @@ module.exports =
                         resolve(false);
                     }  
                 } else {
-                    console.log('Error: Couldn\'t fetch token from user service.');
+                    console.log('Error: Couldn\'t fetch token from user service');
                     resolve(false);
                 }    
-            });            
-            
-        })
-        
-        
+            }).on("error", e => {
+                console.log('Error: Couldn\'t connect to user service\n' + e.message);
+                resolve(false);
+            });                    
+        })        
     }
 }

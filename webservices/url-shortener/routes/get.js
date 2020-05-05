@@ -30,8 +30,14 @@ router.get('/:id', async (req, res) =>
 router.get('/', async (req, res) =>
 {  
   const header_value = req.header('X-Access-Token');
-  const isHeaderValid = await verification.Verification(header_value);
-  console.log("Is header valid: " + isHeaderValid);
+  let isHeaderValid = false;
+  try {
+    isHeaderValid = await verification.Verification(header_value);
+  }
+  catch(err) {
+    console.log('Couldn\'t verify JWT\n' + err);
+  }
+  
   if (isHeaderValid == true) {
     try
     {

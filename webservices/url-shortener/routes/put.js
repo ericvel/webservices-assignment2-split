@@ -8,7 +8,15 @@ const Url = require('../models/url');
 router.put('/:id', async (req, res) =>
  {
   const header_value = req.header('X-Access-Token');
-  if (verification.Verification(header_value))
+  let isHeaderValid = false;
+  try {
+    isHeaderValid = await verification.Verification(header_value);
+  }
+  catch(err) {
+    console.log('Couldn\'t verify JWT');
+  }
+  
+  if (isHeaderValid == true)
   {
     try
     {
@@ -19,7 +27,7 @@ router.put('/:id', async (req, res) =>
           await url.save();
         return res.status(200).json(url);
       }//if 
-      else 
+      else
       {
         return res.status(404).json('No url found');
       }//else

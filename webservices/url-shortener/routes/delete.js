@@ -8,7 +8,15 @@ const Url = require('../models/url');
 router.delete('/:id', async (req, res) => 
 {
   const header_value = req.header('X-Access-Token');
-  if (verification.Verification(header_value))
+  let isHeaderValid = false;
+  try {
+    isHeaderValid = await verification.Verification(header_value);
+  }
+  catch(err) {
+    console.log('Couldn\'t verify JWT');
+  }
+  
+  if (isHeaderValid == true)
   {
     try
     {
@@ -42,7 +50,15 @@ router.delete('/:id', async (req, res) =>
 router.delete('/', async (req, res) => 
 {
   const header_value = req.header('X-Access-Token');
-  if (verification.Verification(header_value))
+  let isHeaderValid = false;
+  try {
+    isHeaderValid = await verification.Verification(header_value);
+  }
+  catch(err) {
+    console.log('Couldn\'t verify JWT');
+  }
+  
+  if (isHeaderValid == true)
   {
   try
   {
